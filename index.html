@@ -18,6 +18,13 @@
       position: relative;
     }
 
+    .centered-container {
+      width: fit-content; 
+      max-width: 90vw;    
+      margin: 0 auto;     
+      padding: 20px;
+    }
+
     .terminal-line {
       font-size: 1.1rem;
       white-space: nowrap;
@@ -41,7 +48,7 @@
     .urls-container {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: flex-start; 
     }
 
     .urls-label {
@@ -87,27 +94,42 @@
       font-size: 0.9rem;
       color: #555;
     }
+
+    @media (max-width: 768px) {
+      .links {
+        grid-template-columns: repeat(2, auto);
+        gap: 10px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .links {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="terminal-line" id="terminalText">nullsec0x@twinkpad > new tab</div>
+  <div class="centered-container"> 
+    <div class="terminal-line" id="terminalText">nullsec0x@twinkpad > new tab</div>
 
-  <div class="urls-container">
-    <div class="urls-label">URLs &#123;</div>
-    <div class="links">
-      <a href="https://chat.openai.com">chatgpt</a>
-      <a href="https://www.4chan.org/">4chan</a>
-      <a href="https://www.reddit.com">reddit</a>
-      <a href="http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page">hidden wiki</a>
-      <a href="https://archive.org">archive</a>
-      <a href="https://www.wiby.me">wiby</a>
-      <a href="https://www.khanacademy.org">khan academy</a>
-      <a href="https://explainshell.com/">explain shell</a>
-      <a href="https://github.com/">github</a>
-      <a href="https://stevenuniverse.best/">cartoons</a>
-      <a href="https://hdtodayz.to/">movies</a>
+    <div class="urls-container">
+      <div class="urls-label">URLs &#123;</div>
+      <div class="links">
+        <a href="https://chat.openai.com">chatgpt</a>
+        <a href="https://www.4chan.org/">4chan</a>
+        <a href="https://www.reddit.com">reddit</a>
+        <a href="http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page">hidden wiki</a>
+        <a href="https://archive.org">archive</a>
+        <a href="https://www.wiby.me">wiby</a>
+        <a href="https://www.khanacademy.org">khan academy</a>
+        <a href="https://explainshell.com/">explain shell</a>
+        <a href="https://github.com/">github</a>
+        <a href="https://stevenuniverse.best/">cartoons</a>
+        <a href="https://hdtodayz.to/">movies</a>
+      </div>
+      <div class="urls-end">&#125;</div>
     </div>
-    <div class="urls-end">&#125;</div>
   </div>
 
   <div class="clock" id="decimalClock"></div>
